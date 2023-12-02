@@ -1,0 +1,83 @@
+#container-help{
+  display: none;
+}
+
+#wrapper-help{
+  height: 457px;
+}
+
+@include lg {
+
+  #wrapper-help {
+    position: relative;
+
+    right: 90px;
+  }
+
+}
+
+@include breakpoint(670px) {
+
+  #wrapper-help {
+    width: 307px;
+    height: 444px !important;
+    margin-right: 10px;
+
+    .button {
+      input {
+        width: 180px;
+        right: -29px;
+      }
+    }
+
+    textarea#fichero-tarifas{
+      width: 239px;
+    }
+    .package-file {
+      margin-left: 20px;
+      width: 156px;
+
+    }
+
+  }
+}
+
+@include breakpoint(649px) {
+
+  #wrapper-help {
+    right: 30px;
+  }
+}
+
+
+@include breakpoint(480px) {
+
+  #wrapper-help {
+    width: 245px !important;
+
+    .button {
+      input {
+        width: 180px;
+        right: 0;
+      }
+    }
+    textarea#fichero-tarifas{
+      width: 179px;
+    }
+
+    .package-file {
+      margin-left: -10px;
+    }
+
+  }
+
+  #main-container, #adminPackages {
+    right: 130px;
+  }
+}
+
+
+
+
+
+

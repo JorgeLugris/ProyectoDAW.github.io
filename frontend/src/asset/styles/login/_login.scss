@@ -1,0 +1,240 @@
+/* ********************ESTILOS PARA EL LOGIN*************************** */
+
+
+//Estilo para la página del login.
+.login {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-image: url('../../images/login-bg.jpg') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  //Estilo para el formulario.
+  .login__form {
+    min-height: 500px;
+    max-width: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    border-radius: 40px;
+    background: $bgGrey-login;
+    backdrop-filter: blur(10px);
+    box-shadow: $shadow-login;
+
+    //Estilo para el título del formulario.
+    .login__form-title {
+      margin-bottom: 50px;
+      font-size: 4rem !important;
+      color: $white-login;
+      text-shadow: 4px 3px 0 #7A7A7A;
+      font-style: italic;
+    }
+
+    //Estilo para la caja pequeña de arriba.
+    &::after {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: -30px;
+      left: -50px;
+      background: $lightBlue-login;
+      border-radius: 10px;
+      content: "";
+      animation-name: rotate-box;
+      animation-duration: 1.5s;
+
+    }
+
+    //Estilo para la caja pequeña de abajo.
+    &::before {
+      position: absolute;
+      width: 120px;
+      height: 130px;
+      top: 30px;
+      left: -90px;
+      background: $blue-login;
+      border-radius: 10px;
+      content: "";
+      animation-name: rotate-box;
+      animation-duration: 1.5s;
+    }
+
+    //Animación de las 2 cajas para que se muevan en rotación.
+    @keyframes rotate-box {
+      0% {
+        transform: rotate(90deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
+
+    //Estilo de todos los divs que contienen inputs
+    .login__form-inputs {
+      width: 85%;
+      margin-bottom: 30px;
+      border-bottom: 3px solid $white-login;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      //Estilo de los inputs(etiqueta HTML)
+      input {
+        width: 93%;
+        background: none;
+        font-size: 20px;
+        padding: 5px 10px 10px 0;
+        color: $white-login;
+        margin-left: 1.5rem;
+
+        //Estilo de todos placeholders.
+        &::placeholder {
+          color: $whiteGrey-login;
+        }
+      }
+
+      //Estilo de los iconos.
+      .fa-user:before, .fa-key:before {
+        color: $white-login;
+        margin-bottom: 3px;
+        font-size: 1.5rem;
+      }
+
+    }
+
+    //Estilos del botón.
+    .login__form-btn {
+
+      //Estilo del input del botón.
+      input {
+        background: #257c7a;
+        font-size: 17px;
+        padding: 10px 60px;
+        border-radius: 10px;
+        transition: 0.6s ease all;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+        cursor: pointer;
+        color: $white-login;
+
+        //Estilo del botón al tenerlo enfocado con el cursor.
+        &:hover {
+          background: $blue-login;
+          cursor: pointer;
+          color: $black-login;
+        }
+      }
+    }
+
+    //Estilo para el div de resetear la contraseña.
+    .login__form-resetPassword {
+      margin-top: 20px;
+      margin-bottom: -10px;
+
+      //Estilo para el link de resetear contraseña
+      .resetPassword__link {
+        color: $darkBlue-login;
+        font-family: bold, serif;
+        font-size: 20px;
+
+        //Estilo al poner el cursor encima del link resetear contraseña
+        &:hover {
+          color: $black-login;
+        }
+      }
+    }
+  }
+}
+
+
+//Media Queries
+
+//Media Queries 720px
+@include md {
+  .login {
+
+    .login__form {
+      max-width: 349px;
+      min-height: 463px;
+
+      &::after {
+        width: 90px;
+        height: 90px;
+        left: -32px;
+      }
+
+      &::before {
+        width: 105px;
+        height: 105px;
+        left: -70px;
+      }
+
+      .login__form-title {
+        font-size: 3.4rem !important;
+      }
+
+      .login__form-resetPassword {
+        .resetPassword__link {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+//Media Queries(personalizada) 550px
+@include breakpoint(550px) {
+
+  .login {
+    .login__form {
+      max-width: 280px;
+      min-height: 421px;
+
+      &::after {
+        width: 80px;
+        height: 80px;
+        left: -32px;
+      }
+
+      &::before {
+        width: 90px;
+        height: 90px;
+        left: -61px;
+      }
+
+      .login__form-title {
+        font-size: 2.9rem !important;
+      }
+
+      .login__form-inputs {
+        input {
+          font-size: 14px;
+          margin-left: 2rem;
+        }
+      }
+
+      .login__form-resetPassword {
+        .resetPassword__link {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+//Media Queries 480px
+@include sm {
+  .login {
+    .login__form::after, .login__form::before {
+      width: 0;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+/*********************ESTILOS PARA EL COMPONENTE HOME*************************** */
+
+//Estilo para el componente "home"
+.home {
+  padding: 0;
+
+  //Estilo para la caja
+  .box {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    justify-content: flex-end;
+    padding: 2rem 9%;
+
+    //Estilo para el contenido
+    .content {
+      width: 50rem;
+
+      //Estilo para el Span
+      span {
+        font-size: 4rem;
+        color: $black;
+      }
+
+      //Estilo para el titulo en h3
+      h3 {
+        font-size: 6rem;
+        color: $green;
+        padding-top: .5rem;
+        text-transform: uppercase;
+      }
+    }
+
+    //Estilo para el texto
+    p {
+      line-height: 2;
+      color: $black;
+      font-size: 1.5rem;
+      padding: 1rem 0;
+    }
+  }
+}
+
+
+//Media Queries(960px)
+//TODO: ../Components/mediaQueries
+@include lg {
+    .home {
+      .box {
+        padding: 2rem;
+        justify-content: center;
+        background-position: right !important;
+      }
+
+
+      .content {
+        text-align: center;
+
+        span {
+          font-size: 3rem;
+        }
+
+        h3 {
+          font-size: 4rem;
+        }
+      }
+  }
+}

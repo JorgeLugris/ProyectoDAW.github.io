@@ -1,0 +1,173 @@
+
+
+$black-grey: #333;
+$box-shadow-help: 0 .5rem 1rem rgba(0, 0, 0, .1);
+$green: #00E77F;
+$white: #fff;
+$light-blue: #29d9d5;
+$black: #3d3d3d;
+$light-bg: #4b4b4b;
+
+
+#contact {
+  padding: -0 9% !important;
+
+  .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: -50px;
+
+    .image {
+      flex: 1 1 40rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    form {
+      flex: 1 1 40rem;
+
+      .box {
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        border-radius: .5rem;
+        background-color: $light-bg;
+        font-size: 1.8rem;
+        color: $white;
+        padding: 1.4rem;
+        text-transform: none;
+      }
+
+      span {
+        font-size: 1.6rem;
+        color: $light-blue;
+      }
+
+      textarea {
+        width: 300px;
+        height: 300px;
+      }
+
+
+      .radio {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        label {
+          font-size: 1.6rem;
+          color: $light-blue;
+          margin-left: .5rem;
+          cursor: pointer;
+        }
+
+        #female {
+          margin-left: 2rem;
+
+          &:checked ~ label[for="female"] {
+            color: $green;
+          }
+
+
+        }
+
+        input {
+          appearance: none;
+          height: 2rem;
+          width: 2rem;
+          background-color: $light-blue;
+          cursor: pointer;
+        }
+
+        &:checked {
+          background-color: $green;
+          border-radius: 5rem;
+        }
+
+        #male:checked ~ label[for="male"] {
+          color: $green;
+        }
+      }
+    }
+  }
+}
+
+/*Faqs*/
+
+
+.faq .accordion-container {
+  display: grid;
+  grid-template-columns: repeat(2, 70rem);
+  grid-template-rows: repeat(3, auto);
+  justify-content: center;
+
+}
+
+.faq .accordion-container .accordion {
+  box-shadow: $box-shadow-help;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.faq .accordion-container .accordion .accordion-heading {
+  padding: 1.5rem;
+  background: $black-grey;
+  color: $light-blue;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.faq .accordion-container .accordion .accrodion-content {
+  padding: 2rem;
+  background-color: $light-blue;
+  line-height: 2;
+  color: black;
+  font-size: 1.6rem;
+  display: none;
+}
+
+.faq .accordion-container .accordion.active .accrodion-content {
+  display: block;
+}
+
+.faq .accordion-container .accordion.active .accordion-heading {
+  background: $light-blue;
+  color: black;
+}
+
+.faq .accordion-container .accordion.active .accordion-heading i {
+  transform: rotate(180deg);
+}
+
+@include breakpoint(1424px) {
+  .faq{
+    .accordion-container {
+      display: grid;
+      grid-template-columns: repeat(1, 90%);
+      grid-template-rows: repeat(3, auto);
+      justify-content: center;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

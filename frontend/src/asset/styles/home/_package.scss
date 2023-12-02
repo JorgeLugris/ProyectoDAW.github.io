@@ -1,0 +1,189 @@
+/*********************ESTILOS PARA EL COMPONENTE PACKAGE*************************** */
+
+//Estilo para el componente "package"
+.package {
+  //Estilo para el contenedor
+  .box-container {
+    @include grid(40rem);
+    justify-items: center;
+
+
+    //Estilo para las cardas
+    .card {
+      position: relative;
+      width: 600px;
+      height: 350px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      transition: 0.5s;
+
+      //Estilo para darle la forma
+      .circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+
+        //Estilo para la animación del circulo
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: whitesmoke;
+          clip-path: circle(120px at center);
+          transition: 0.5s;
+        }
+
+      }
+
+      //Estilo al pasar el ratón por el circulo
+      &:hover .circle:before {
+        background: $light-color;
+        clip-path: circle(400px at center);
+      }
+
+      //Estilo de la imagén
+      img {
+        position: absolute;
+        top: 55%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: 0.5s;
+
+      }
+
+      //El movimiento que tiene la imagen al pasar el raton por encima
+      &:hover img {
+        left: 72%;
+      }
+
+      //Estilo de todo el contenido del texto
+      .content1 {
+        position: relative;
+        width: 50%;
+        left: 20%;
+        padding: 20px 20px 20px 40px;
+        transition: 0.5s;
+        opacity: 0;
+        visibility: hidden;
+
+        //Estilo del título
+        h2 {
+          color: white;
+          text-transform: uppercase;
+          font-size: 2em;
+          Line-height: 1em;
+          margin-bottom: 5px;
+
+        }
+
+        //Estilo del texto
+        p {
+          color: white;
+          max-width: 206px;;
+
+        }
+
+        //Estilo de los enlaces
+        a {
+          position: relative;
+          padding: 10px 20px;
+          border-radius: 10px;
+          background: white;
+          color: $black;
+          margin-top: 10px;
+          display: inline-block;
+          text-decoration: none;
+          font-weight: 700;
+
+          //Estilo al pasar encima del enlace
+          &:hover {
+            background-color: $black;
+            color: $light-color
+          }
+        }
+      }
+
+      //Estilo al pasar encima del contenido de texto
+      &:hover .content1 {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+
+    }
+  }
+}
+
+//Estilo de los headers de cada componente.
+.heading {
+  text-align: center;
+  margin-botton: 2rem;
+  margin-top: 10rem;
+
+  //Estilo del span
+  span {
+    color: $blue;
+    font-size: 2rem;
+  }
+
+  //Estilo del título de cada uno de los "headers"
+  h1 {
+    font-size: 4rem;
+    color: $white;
+    margin-bottom: 5%;
+  }
+}
+
+//Media Queries
+//TODO: ../Components/mediaQueries
+
+@include breakpoint(991px) {
+
+  .package {
+    .box-container {
+      @include grid(35rem);
+    }
+
+    .card {
+      width: auto;
+      max-width: 350px;
+      align-items: flex-start;
+      margin: 10px;
+
+      &:hover {
+        height: 600px;
+      }
+
+      .content {
+        width: 100%;
+        left: 0;
+        padding: 30px;
+      }
+
+      &:hover img {
+        top: 70%;
+        left: 50%;
+        height: 300px;
+      }
+    }
+  }
+
+}
+
+@include breakpoint(768px) {
+  .package {
+    .box-container {
+      justify-items: center;
+    }
+  }
+}
+

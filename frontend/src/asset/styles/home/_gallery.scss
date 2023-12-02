@@ -1,0 +1,37 @@
+/* ********************ESTILOS PARA EL COMPONENTE GALLERY*************************** */
+
+//Estilos para el estilo "Gallery"
+.gallery {
+  //Estilo para el contenedor de las galerías
+  .box-container {
+
+    columns: 3 25rem;
+    column-gap: 1.5rem;
+
+    //Estilo para cada una de las cajas
+    .box {
+      margin-bottom: 1rem;
+      break-inside: avoid;
+
+      //Estilos para las imágenes
+      img {
+        width: 100%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      //Estilo para los span
+      span {
+        font-size: 1.4rem;
+        color: $light-color;
+      }
+
+      //Estilo para los títulos
+      h3 {
+        margin-top: .5rem;
+        font-size: 2rem;
+        color: $white;
+      }
+    }
+  }
+}

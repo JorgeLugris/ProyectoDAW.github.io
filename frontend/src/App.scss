@@ -1,0 +1,167 @@
+/*Componentes SAAS*/
+@import 'asset/styles/components/mixins';
+@import 'asset/styles/components/font';
+@import 'asset/styles/components/colors';
+@import 'asset/styles/components/mediaQueries';
+
+//Layout
+@import 'asset/styles/layout/navBar';
+@import 'asset/styles/layout/footer';
+
+/*Login*/
+@import 'asset/styles/login/login';
+
+/*Register*/
+@import 'asset/styles/register/register';
+
+/*Home*/
+@import 'asset/styles/home/home';
+@import 'asset/styles/home/about';
+@import 'asset/styles/home/package';
+@import 'asset/styles/home/service';
+@import 'asset/styles/home/monitor';
+@import 'asset/styles/home/gallery';
+@import 'asset/styles/home/blog';
+@import 'asset/styles/home/button';
+
+
+
+/*User*/
+@import 'asset/styles/user/user';
+@import 'asset/styles/user/perfil';
+@import 'asset/styles/user/blog';
+@import 'asset/styles/user/reserve';
+
+/*Admin*/
+@import 'asset/styles/admin/userAdmin';
+@import 'asset/styles/admin/monitorAdmin';
+@import 'asset/styles/admin/packageAdmin';
+@import 'asset/styles/admin/reserveAdmin';
+@import 'asset/styles/admin/helpAdmin';
+
+/*Salir sesión*/
+@import 'asset/styles/logout/logout';
+
+@import 'asset/styles/help/help';
+
+
+
+
+/*Otra cosa*/
+@import 'asset/styles/cuentaVerificada/account';
+@import 'asset/styles/passwordReset/resetPassword';
+//@import 'asset/styles/uploadMonitor';
+
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  //text-transform: capitalize;
+  //transition: all .2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+  transition: all .2s linear;
+  background: black;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $black;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $blue;
+    border-radius: 5rem;
+  }
+}
+
+body {
+  overflow: hidden;
+  //background: $black;
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+
+//Estilos para la ventana emergente "SweetAlert2".
+.swal2-styled {
+  background-color: $blue-sweet !important;
+  border-color: $blue-sweet;
+  border-radius: 0.25em;
+  color: $white-sweet;
+  font-size: $white-sweet;
+}
+
+//Estilos para la ventana emergente "SweetAlert2".
+.swal2-container.swal2-center > .swal2-popup {
+  width: 50rem;
+  height: 30rem;
+  background: $darkBlue-sweet;
+  color: $white-sweet;
+  /* margin-left: 30rem; */
+
+}
+
+.swal2-title {
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.8em 1em 0;
+  color: inherit;
+  font-size: 2.875em !important;
+  font-weight: 600;
+  text-align: center;
+  text-transform: none;
+  word-wrap: break-word;
+}
+
+.swal2-html-container {
+  z-index: 1;
+  justify-content: center;
+  margin: 1em 1.6em 0.3em;
+  padding: 0;
+  overflow: auto;
+  color: inherit;
+  font-size: 1.5em !important;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+a {
+  color: white;
+}
+
+form .input-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 13px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  left: -4px;
+}
+

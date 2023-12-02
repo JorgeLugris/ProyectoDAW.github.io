@@ -1,0 +1,78 @@
+/*********************ESTILOS PARA EL BOTÓN DE ARRIBA*************************** */
+
+//Estilo para el id del botón
+#button-up {
+  width: 60px;
+  height: 60px;
+  background: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $black;
+  border-radius: 50%;
+  font-size: 20px;
+  position: fixed;
+  bottom: 90px;
+
+  right: 50px;
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: all 300ms ease;
+  transform: scale(0);
+
+  //Estilo al pasar el ratón por encima del botón
+  &:hover {
+    transform: scale(1.1);
+    background: white;
+  }
+
+}
+
+
+#button-help{
+  width: 60px;
+  height: 60px;
+  background:#EDECEC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $black;
+  border-radius: 50%;
+  font-size: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: all 300ms ease;
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.1);
+    background: $blue;
+  }
+}
+
+
+
+
+//Media Queries
+//TODO: ../Components/mediaQueries
+@include breakpoint(1139px) {
+  #button-up, #button-help {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+  }
+}
+
+@include sm {
+
+  #button-up, #button-help {
+    width: 40px;
+    height: 40px;
+    right: 21px;
+  }
+}
+
+

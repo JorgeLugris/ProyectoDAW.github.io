@@ -1,0 +1,282 @@
+/* ********************ESTILOS PARA EL REGISTRO*************************** */
+
+
+//Estilo para la página del registro.
+.register__container {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-image: url('../../images/register-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  //Estilo para el movimiento de las nubes
+  .register__container-cloud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../images/register-cloud.png') no-repeat;
+    background-size: cover;
+    animation: animate 60s linear infinite;
+    z-index: 1;
+
+    // Animaciones para las nubes
+    @keyframes animate {
+      0% {
+        background-position: 0;
+      }
+      100% {
+        background-position: -5440px;
+      }
+    }
+  }
+
+  //Estilo para el contenido del registro
+  .register__container-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    width: 100%;
+    height: 550px;
+    background-color: rgba(#aaa, 0.5);
+    padding: 25px 30px;
+    border-radius: 50px;
+    box-shadow: $boxShadow-register;
+    margin-left: 20%;
+    //border: 3px outset #4b95bc;
+
+    //Estilo para el el titulo del registro
+    .register__content-title {
+      color: $blue-register;
+      font-size: 4rem;
+      font-weight: 500;
+      text-shadow: $textShadow-register;
+      position: relative;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+    }
+
+    //Estilo para el formulario del registro
+    .register__form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0 12px 0;
+
+      //Estilo para los inputs(div) del formulario
+      .register__form-inputs {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        width: calc(100% / 2 - 20px);
+
+        //Placeholder(información para usuario del propio input) del input
+        & ::placeholder {
+          color: $light-color important;
+          font-style: italic;
+          font-size: 1.5rem;
+        }
+
+        //Estilo para los input(etiqueta HTML) del formulario
+        input {
+          height: 45px;
+          width: 100%;
+          outline: none;
+          font-size: 16px;
+          border-radius: 5px;
+          padding-left: 15px;
+          border: 2px solid $white;
+          transition: all 0.3s ease;
+          color: $darkBlue-register;
+          text-align: center;
+
+          //Cuándo este seleccionado y sea válido el propio input
+          &:focus,
+          &:valid {
+            border-color: #4b95bc;
+          }
+
+          //Etiqueta de fecha al ser validada
+          &[type=date]:required:valid {
+            color: $light-color !important;
+          }
+
+
+        }
+
+        //Estilo de label(etiqueta html).
+        label.register__inputs-details {
+          display: block;
+          font-weight: 500;
+          margin-bottom: 5px;
+          font-size: 1.5rem;
+          color: $darkBlue-register;
+        }
+
+        //Aparecen información debajo de los inputs cuando el usuario se equivoca.
+        .register__form-errors {
+          color: $red;
+          font-size: 1.2rem;
+          font-style: italic;
+        }
+
+        //El outline de los input se vuelve roja.
+        .error__is-invalid {
+          border-color: $red !important;
+        }
+
+      }
+    }
+
+    //Estilo para el botón
+    .register__form-button {
+      height: 45px;
+      margin: 35px 0;
+      position: relative;
+      top: 35px;;
+
+      // Estilo del input del botón.
+      input {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: $LinearGradient-registerA;
+
+        //Estilo al pasar con el ratón por encima del botón.
+        &:hover {
+          background: $LinearGradient-registerB;
+          color: $white;
+        }
+      }
+    }
+    //Estilo para el botón de subir la imagen
+    #register-user {
+      position: relative;
+      left: 5px !important;
+      border: 2px solid #4b95bc;
+      font-style: italic;
+      width: 155px ;
+      bottom: 110px;
+    }
+    .custom-input-file {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin: 0 auto 0;
+      min-height: 15px;
+      overflow: hidden;
+      padding: 14px;
+      position: relative;
+      text-align: center;
+      border: 2px solid black;
+      border-radius: 25px;
+      max-width: 200px;
+      left: 4px;
+
+      .input-file {
+        border: 10000px solid transparent;
+        cursor: pointer;
+        font-size: 10000px;
+        margin: 0;
+        opacity: 0;
+        outline: 0 none;
+        padding: 0;
+        position: absolute;
+        right: -1000px;
+        top: -1000px;
+      }
+
+    }
+
+  }
+}
+
+//Media queries. Más información TODO: /.asset/styles/componentes/_MediaQueries.
+
+//Media Queries 960px
+@include lg {
+  .register__container-content {
+    margin: 7rem;
+  }
+}
+
+//Media Queries 720px
+@include md {
+  .register__container {
+
+    .register__container-content {
+  position: relative;
+      top: 30px;
+
+      form {
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        .register__form {
+          max-height: 300px;
+          overflow: scroll !important;
+
+          .register__form-inputs {
+            display: flex;
+            flex-wrap: nowrap;
+            align-content: stretch;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+
+      .register__form-button {
+        text-align: center;
+
+        input {
+          width: 47%;
+        }
+      }
+
+      .register__content-title {
+        font-size: 3.5rem;
+      }
+
+    }
+    #register-user {
+      position: relative;
+      left: -3px !important;
+      border: 2px solid #4b95bc;
+      font-style: italic;
+      width: 112px !important ;
+      font-size: 1rem;
+      bottom: 102px;
+    }
+  }
+
+
+}
+
+//Media Queries 480px
+@include sm {
+  .register__content-title {
+    font-size: 2.5rem !important;
+  }
+}
+
+
+
+

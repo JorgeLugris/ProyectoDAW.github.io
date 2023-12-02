@@ -1,0 +1,81 @@
+#containerBoxMonitoresReserves{
+  display: none;
+}
+
+.wrapper-reserve{
+  display: none;
+
+  .button-reserve{
+    position: relative;
+    top: 20px !important;
+  }
+}
+
+
+
+@include lg {
+
+  #wrapper-reserve {
+    position: relative;
+    right: -10px;
+    margin-right: 200px;
+  }
+
+}
+
+@include breakpoint(650px) {
+
+  #wrapper-reserve {
+    width: 307px;
+    margin-right: 90px;
+
+    .button {
+      input {
+        width: 180px;
+        right: -29px;
+      }
+    }
+
+    textarea#fichero-tarifas{
+      width: 239px;
+    }
+    .package-file {
+      margin-left: 20px;
+      width: 156px;
+
+    }
+
+  }
+}
+
+
+@include breakpoint(480px) {
+
+  #wrapper-reserve {
+    width: 245px !important;
+    left: 1px;
+
+    .button {
+      input {
+        width: 180px;
+        right: 0;
+      }
+    }
+    textarea#fichero-tarifas{
+      width: 179px;
+    }
+
+    .package-file {
+      margin-left: -10px;
+    }
+
+  }
+
+  #main-container, #adminPackages {
+    right: 130px;
+  }
+}
+
+
+
+

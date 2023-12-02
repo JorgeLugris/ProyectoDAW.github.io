@@ -1,0 +1,84 @@
+/*********************ESTILOS PARA EL COMPONENTE BLOGS*************************** */
+
+//Estilo para el componente "blog"
+.blogs {
+  //Estilo para el contenedor del blog
+  .box-container {
+    @include grid(32rem);
+
+    //Estilo para las cajas
+    .box {
+      border-radius: 1rem;
+      background: $bg-color;
+      overflow: hidden;
+      //Estilo que se activa cuando el ratón pasa por encima de la caja
+      &:hover {
+        .image img {
+          transform: scale(1.1);
+        }
+      }
+
+      //Estilo de la imagen(clase)
+      .image {
+        height: 25rem;
+        overflow: hidden;
+        width: 100%;
+        //Estilo de la imagen(etiqueta)
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      //Estilo del contenido de la caja
+      .content {
+        padding: 2rem;
+
+        //Estilo del link
+        .link {
+          font-size: 2rem;
+          color: $white;
+
+          //Estilo que se activa cuando el ratón pasa por encima del link
+          &:hover {
+            color: $blue;
+          }
+        }
+
+        //Estilo para el texto
+        p {
+          padding: 1rem 0;
+          font-size: 1.4rem;
+          color: $light-color;
+          line-height: 2;
+        }
+
+        //Estilo para los iconos
+        .icon {
+          padding-top: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          //Estilo para la etiqueta "a"(links)
+          a {
+            font-size: 1.4rem;
+            color: $light-color;
+
+            //Estilo al pasar por encima de la etiqueta "a"
+            &:hover {
+              color: $blue;
+            }
+
+            //Estilo para las letras "itálicas"
+            i {
+              padding-right: .5rem;
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}

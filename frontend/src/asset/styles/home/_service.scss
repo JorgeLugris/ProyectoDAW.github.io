@@ -1,0 +1,55 @@
+/*********************ESTILOS PARA EL COMPONENTE SERVICE*************************** */
+
+//Estilos que pertenecen al componente "Services"
+.services {
+  //Estilo del propio contenedor
+  .box-container {
+    @include grid(40rem);
+
+    //Estilos de la caja
+    .box {
+      background: $bg-color;
+      border-radius: 1rem;
+      padding: 3rem;
+      text-align: center;
+      border: 0.2rem solid $black;
+
+      //Estilo al pasar el cursor por encima de la caja
+      &:hover {
+        border: $border;
+      }
+
+      //Estilo de las letras
+      i {
+        font-size: 4rem;
+        color: $blue;
+        margin-bottom: 2rem;
+      }
+
+      //Estilo del título
+      h3 {
+        font-size: 2rem;
+        color: white;
+      }
+
+      //Estilos de los párrafos
+      p {
+        padding: 1rem 0;
+        font-size: 1.4rem;
+        color: $light-color;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+
+
+
+/*
+.input-box select {
+  position: relative;
+  left: -4px;
+}
+
+ */

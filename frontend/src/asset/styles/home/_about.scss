@@ -1,0 +1,105 @@
+/* ********************ESTILOS PARA EL COMPONENTE ABOUT*************************** */
+
+//Estilos para el estilo "About"
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 5rem;
+
+  //Estilo para el contenedor de los vídeos
+  .video-container {
+    flex: 1 1 42rem;
+
+    //Estilo para los vídeos
+    video {
+      border-radius: 1rem;
+      width: 100%;
+    }
+
+    //Estilo para los controles
+    .controls {
+      text-align: center;
+      padding: 2rem 0;
+
+      //Estilos para los span
+      span {
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background: $white;
+        cursor: pointer;
+        margin: 0.7rem;
+
+        //Estilo al pasar el ratón encima del span
+        &:hover {
+          background: $blue;
+        }
+      }
+    }
+
+  }
+
+  //Estilo del contenido donde se encuentra el texto
+  .content {
+    flex: 1 1 42rem;
+    margin-bottom: 5rem;
+
+    //Estilo del span donde contiene el texto
+    span {
+      color: $blue;
+      font-size: 2rem;
+    }
+
+    //Estilo del titulo
+    h3 {
+      color: $white;
+      font-size: 4rem;
+      margin-top: 0.5rem;
+    }
+
+    //Estilo del texto
+    p {
+      padding: 1rem 0;
+      font-size: 1.4rem;
+      color: $light-color;
+      line-height: 2;
+    }
+
+  }
+}
+
+//Estilo de los headers de cada componente.
+.heading {
+  text-align: center;
+  margin-botton: 2rem;
+  margin-top: 10rem;
+
+  span {
+    color: $blue;
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    color: $white;
+    margin-bottom: 5%;
+  }
+}
+
+//Media Queries(960px)
+//TODO: ../Components/mediaQueries
+@include lg {
+  html {
+    font-size: 50%;
+  }
+  .about {
+    .content {
+      h3 {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}

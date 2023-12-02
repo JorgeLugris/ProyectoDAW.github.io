@@ -1,0 +1,269 @@
+/* ********************ESTILOS PARA EL LAYOUT NAVBAR*************************** */
+
+//Estilo del "Header"
+.header {
+  position: fixed;
+  overflow-y: visible !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: $bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 9%;
+
+  //Estilo para el "Navbar completo"
+  .navbar {
+
+    //Estilo para los links
+    a {
+      font-size: 1.7rem;
+      color: $light-color;
+      display: inline-block;
+      margin: 0 1rem;
+
+      //Estilos al pasar el cursor encima de los links
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    //Estilo para que no sea visible el perfil del responsive
+    .perfil-invisible {
+      display: none;
+    }
+
+    //Estilo de la clase action
+    .action {
+      position: fixed;
+      top: 5px;
+      right: 60px;
+
+      //Estilo del perfil
+      .profile {
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+
+        //Estilo de la imagén del perfil
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      //Estilo al darle click al darle click a la foto que aparezca el perfil.
+      .active {
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+
+      //Estilo del menú
+      .menu {
+        position: absolute;
+        top:72px;
+        right: -10px;
+        padding: 10px 20px;
+        background: #222;
+        width: 200px;
+        box-sizing: border-box;
+        border-radius: 15px;
+        transition: 0.5s;
+        visibility: hidden;
+        opacity: 0;
+
+        //Pseudoelemento del menú
+        &::before {
+          content: '';
+          position: absolute;
+          top: -5px;
+          right: 28px;
+          width: 20px;
+          height: 20px;
+          background: #222;
+          transform: rotate(45deg);
+        }
+
+        //Estilo del título
+        h3 {
+          width: 100%;
+          text-align: center;
+          font-size: 18px;
+          padding: 20px 0;
+          font-weight: 500;
+          color: $white;
+          line-height: 1.2em;
+
+          //Estilo del span
+          span {
+            font-size: 14px;
+            color: $white;
+            font-weight: 400;
+          }
+
+        }
+
+        //Estilo de las listas
+        ul {
+          li {
+            list-style: none;
+            padding: 10px 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+
+            //Estilo de las imágenes que contiene las listas
+            img {
+              max-width: 20px;
+              margin-right: 10px;
+              opacity: 0.5;
+              transition: 0.5s;
+              color: white;
+            }
+
+            //Estilo al pasar el cursor encima de las imágenes
+            &:hover img {
+              opacity: 1;
+            }
+
+            //Estilo de los links de cada una de las listas
+            a {
+              display: inline-block;
+              text-decoration: none;
+              color: $white;
+              font-weight: 500;
+              transition: 0.5s;
+
+            }
+
+            //Estilo al pasar el cursor de los links
+            &:hover a {
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  //Estilo del botón
+  .btn {
+    margin-top: 0;
+  }
+
+
+}
+
+//Estilo del logo
+.logo {
+  font-size: 2.5rem;
+  color: $white;
+  font-weight: bolder;
+
+  //Estilo de las letras itálicas
+  i {
+    color: $blue;
+    padding-right: .5rem;
+  }
+}
+
+//Estilo de la id: "menu-btn"
+#menu-btn {
+  font-size: 2.5rem;
+  color: $white;
+  cursor: pointer;
+  display: none;
+}
+
+//Estilos del botón
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: $blue;
+  border: $border;
+  border-radius: 5rem;
+  cursor: pointer;
+  background: none;
+
+  //Estilos al pasar el cursor encima del botón
+  &:hover {
+    background: $blue;
+    color: $black;
+  }
+}
+
+
+//Media Queries(personalizada) 1300px
+
+@include breakpoint(1316px) {
+  html {
+    font-size: 55%;
+  }
+  .navbar a {
+    font-size: 1.3rem !important;
+  }
+
+  .action {
+    right: 20px !important;
+  }
+}
+
+//Media Queries(personalizada) 905px
+@include breakpoint(1152px) {
+  #menu-btn {
+    display: inline-block;
+  }
+  .header {
+    .navbar {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      background: $bg-color;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+      &.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      a {
+        margin: 2rem;
+        font-size: 2rem;
+        display: block;
+      }
+    }
+
+    .navbar {
+      .perfil-invisible {
+        display: block;
+      }
+
+      .action {
+        display: none;
+      }
+    }
+
+  }
+}
+
+
+//Media Queries(personalizada) 450px
+@include breakpoint(450px) {
+
+  html {
+    font-size: 50%;
+  }
+}
+

@@ -1,0 +1,124 @@
+/*********************ESTILOS PARA EL LAYOUT FOOTER*************************** */
+
+/*
+section .footer{
+  padding: 0;
+}
+*/
+
+//Estilo para el layout "footer"
+.footer {
+  background-color: #222;
+
+  //Estilo para el contenedor
+  .box-container {
+    @include grid(25rem);
+
+    //Estilo para las cajas
+    .box {
+      padding: 1rem 0;
+
+      //Estilo para el logo
+      .logo {
+        padding-bottom: 1rem;
+      }
+
+      //Estilo para el título
+      h3 {
+        font-size: 2.2rem;
+        color: $white;
+        padding: 1rem 0;
+      }
+
+      //Estilo para los párrafos
+      p {
+        font-size: 1.4rem;
+        color: $light-color;
+        padding: 1rem 0;
+        line-height: 2;
+
+        //Estilos para las letras itálicas
+        i {
+          padding-right: .5rem;
+          color: $blue;
+        }
+      }
+
+      //Estilo para la clase "share"
+      .share {
+        padding-top: 1rem;
+
+        //Estilo para los links
+        a {
+          height: 4.5rem;
+          width: 4.5rem;
+          line-height: 4rem;
+          border-radius: 50%;
+          font-size: 1.7rem;
+          border: $border;
+          color: $blue;
+          margin-right: .5rem;
+          text-align: center;
+
+          //Estilo que comienza cuando el cursor del ratón pasa por encima de los links
+          &:hover {
+            background: $blue;
+            color: $black;
+          }
+        }
+      }
+
+      //Estilo para las clase "links"
+      .links {
+        font-size: 1.4rem;
+        color: $light-color;
+        padding: 1rem 0;
+        display: block;
+
+        //Estilo que comienza cuando el cursor del ratón pasa por encima de los links
+        &:hover {
+          color: $blue;
+
+          //Estilo para las letras itálicas que están dentro de la clase "link"
+          i {
+            padding-right: 2rem;
+          }
+        }
+
+        //Estilo para las letras itálicas
+        i {
+          padding-right: .5rem;
+          color: $blue;
+        }
+      }
+
+      //Estilo para el formulario del email
+      form .email {
+        width: 100%;
+        border-radius: 5rem;
+        border: $border;
+        background: none;
+        font-size: 1.5rem;
+        text-transform: none;
+        color: $light-color;
+        margin-bottom: 1rem;
+        padding: 1.2rem 1.4rem;
+      }
+    }
+  }
+}
+
+/*
+.credit{
+  background: $bg-color;
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem 1rem;
+  color:$light-color;
+
+  span{
+    color:$blue;
+  }
+}
+
+ */
